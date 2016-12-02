@@ -2,9 +2,6 @@
 import sys
 from enum import Enum
 
-if __name__ != '__main__':
-    sys.exit()
-
 class Tile(Enum):
     empty = 0
     player = 1
@@ -58,17 +55,11 @@ def get_moves(board):
     """Return a list of possible moves"""
     pass
 
-
-
-print_board(init_board(5, 4))
-
 def minimax(board, depth, is_maximizing):
     if is_loss(board):
         return -1
     if is_win(board):
         return 1
-
-
 # 01 function minimax(node, depth, maximizingPlayer)
 # 02     if depth = 0 or node is a terminal node
 # 03         return the heuristic value of node
@@ -86,4 +77,23 @@ def minimax(board, depth, is_maximizing):
 # 13             v := minimax(child, depth − 1, TRUE)
 # 14             bestValue := min(bestValue, v)
 # 15         return bestValue
+
+def generate():
+    # Repeat:
+    # Generate a random game
+    # Run minimax to verify the game is solvable
+    # If possible, also enforce "hardness conditions"
+    pass
+
+if __name__ == '__main__':
+    # TODO repl
+    # repl: play against AI
+    # generate()
+    # r reset
+    # m move r1 c1 r2 c2
+    # b barrier
+    # s save
+    # n next
+    print_board(init_board(5, 4))
+
 
